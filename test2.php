@@ -1,6 +1,6 @@
 <html>
 <?php
-include("php-quandl-master/Quandl.php");
+include("testQuand/php-quandl-master/Quandl.php");
 //$api_key = $_SERVER['QUANDL_KEY'] ?: "bcw-wtRJ3ucCAZJQu4i8";
 $api_key = "bcw-wtRJ3ucCAZJQu4i8";
 $quandl = new Quandl($api_key, 'json');
