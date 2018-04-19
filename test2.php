@@ -1,12 +1,6 @@
 <html>
 <?
 include("testQuand/php-quandl-master/Quandl.php");
-?>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/data.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<div id="container" style="height: 400px; max-width: 800px; margin: 0 auto"></div>
-<?
 //$api_key = $_SERVER['QUANDL_KEY'] ?: "bcw-wtRJ3ucCAZJQu4i8";
 $api_key = "bcw-wtRJ3ucCAZJQu4i8";
 $quandl = new Quandl($api_key, 'json');
@@ -36,13 +30,12 @@ $quandl->no_ssl_verify = true;
 $quandl->timeout = 60;
 */
 ?>
-
+<div id="container" style = "min-width:400px; height: 400px"></div>
 <table id='datatable'>
   <tr>
     <th>Dates</th>
     <th>Prices</th>  
   </tr><?php
-
 for($x = 9; $x >= 0; $x--){
           ?><tr> 
           <th><?=$dates[$x];?></th>   
@@ -51,9 +44,22 @@ for($x = 9; $x >= 0; $x--){
   };
 ?>
 </table>
-    
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<div id="container" style="height: 100%; width: 95%; margin: 0 auto"></div>
 <script>
-Highcharts.chart('container',{
+$(function () {
+
+{
+    Highcharts.setOptions({
+        colors: ['#0099cc']
+    });
+  }
+
+    Highcharts.chart('container',{
         data: {
             table: 'datatable'
         },
@@ -66,9 +72,12 @@ Highcharts.chart('container',{
         credits: {
             enabled: false
         },
+        legend: {
+            enabled: false
+        },
         yAxis: {
-            allowDecimals: false,
-            min:0,
+            allowDecimals: true,
+            //min:0,
             //min:80,
             //max:100,
             //tickInterval:10,
@@ -86,23 +95,13 @@ Highcharts.chart('container',{
                 }
             }
         },
-        legend:{
-            align: 'right',
-            x: -30,
-            verticalAlign: 'top',
-            y: 25,
-            floating: true,
-            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-            borderColor: '#CCC',
-            borderWidth: 1,
-            shadow: false
-        },
         tooltip: {
             formatter: function () {
                 return '<b>' + this.series.name + '</b><br/>' +
-                    this.point.name + ' - ' + this.point.y + ' Defect(s)';
+                    this.point.name + ' - ' + this.point.y + ' Dollars(s)';
             }
         }
     });
+});
 </script>
 </html>
