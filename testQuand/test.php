@@ -18,7 +18,7 @@ $obj2 = json_decode( $data, true );
 //file_put_contents('test.json', json_encode($obj2));
 $value = $obj2['dataset']['data'];
 foreach ($value as $key){
-    $dates[] = $key[0];
+    $dates[] = "'" . $key[0] . "'";
     $prices[] = $key[1];
     //echo $key[0]. ',' . $key[1];
    // echo "<br></br>";
@@ -47,7 +47,7 @@ Highcharts.chart('container', {
         text: 'Source: WorldClimate.com'
     },
     xAxis: {
-        categories: <? echo $dates ?>,
+        categories: <? echo join($dates,',') ?>,
         crosshair: true
     },
     yAxis: {
@@ -72,7 +72,7 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'Prices',
-        data: <? echo $prices ?>
+        data: <? echo join($prices, ',') ?>
 
     }]
 });
