@@ -34,69 +34,69 @@ $quandl->no_ssl_verify = true;
 $quandl->timeout = 60;
 */
 ?>
-
-
-    <div id="container" style="width: 1200px; height: 600px; margin: 0 auto"></div>
-    <script>
+<div id="container" style="min-width:400px; height: 400px;"></div>
+<table id='datatable'>
+  <tr>
+    <th>Dates</th>
+    <th>Prices</th>  
+  </tr><?
+for($i = 0; $i < 10; $i++){
+          ?><tr> 
+          <th><? echo $dates[$i]; ?></th>   
+          <th><? echo $prices[$i]; ?></th> 
+          </tr>  <?
+  };
+ mssql_close($dbhandle);
+?>
+</table>
 <script>
-{
-    Highcharts.setOptions({
-        colors: ['#084f83']
-    });
-  
-        }
-
 $(function () {
 
-    $('#container').highcharts({
-        title: {
-            text: 'Price Change over 10 Days'
-        },
-        xAxis: [{
-            categories: [<?php echo join($dates, ",") ?>]
-        }],
-      credits: {
-      enabled: false
-  },
-plotOptions: {
-    column: {           
-        groupPadding: 0.5,
-        pointWidth: 5                         
-    }
-},
-        yAxis: [{ // Primary yAxis
-            labels: {
-                format: '{value}',
-                style: {
-                    color: '#000000'
-                }
-                
-            },
-            title: {
-                text: 'Prices in last 10 days',
-                style: {
-                    color: '#000000'
-                }
-            },
-            opposite: true,
-            linkedTo:1
+{
+    Highcharts.setOptions({
+        colors: ['#00868B']
+    });
+  }
 
-        }],
-        tooltip: {
-            shared: true,
-            color: ['#000000']
+    $('#container').highcharts({
+        data: {
+            table: 'datatable'
         },
-        series: [{
-            name: 'Prices',
-            type: 'column',
-            colorByPoint: true,
-            colors: ['#ff0000'],
-            yAxis: 1,
-            data: [<?php echo join($prices, ',') ?>]
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Price Change Over 10 Days'
+        },
+        credits: {
+            enabled: false
+        },
+        yAxis: {
+            allowDecimals: false,
+            //min:80,
+            //max:100,
+            //tickInterval:10,
+            title: {
+                text: '<b>Prices</b>'                
+            }
+        },
+        xAxis: {
+          title: {
+                text: '<b>Dates</b>'                
+            },
+            labels: {
+                style: {
+                  color: '#000000'
+                }
+            }
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name + '</b><br/>' +
+                    this.point.name + ' - ' + this.point.y + ' Dollars(s)';
+            }
         }
-        ]
     });
 });
-
 </script>
 </html>
