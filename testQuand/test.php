@@ -19,7 +19,7 @@ $obj2 = json_decode( $data, true );
 //file_put_contents('test.json', json_encode($obj2));
 $value = $obj2['dataset']['data'];
 foreach ($value as $key){
-    $dates[] = "'" . $key[0] . "'";
+    $dates[] = $key[0];
     $prices[] = $key[1];
     //echo $key[0]. ',' . $key[1];
    // echo "<br></br>";
@@ -46,7 +46,6 @@ for($i = 0; $i < 10; $i++){
           <th><? echo $prices[$i]; ?></th> 
           </tr>  <?
   };
- mssql_close($dbhandle);
 ?>
 </table>
 <script>
