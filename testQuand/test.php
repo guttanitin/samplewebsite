@@ -35,6 +35,7 @@ $quandl->timeout = 60;
 ?>
 
 <html>
+    <script>
 Highcharts.chart('container', {
     chart: {
         type: 'column'
@@ -75,4 +76,5 @@ Highcharts.chart('container', {
 
     }]
 });
-    </html>
+             </script>
+</html>
