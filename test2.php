@@ -52,7 +52,8 @@ $quandl->timeout = 60;
 <table id='datatable'>
   <tr>
     <th>Dates</th>
-    <th>Prices</th>  
+    <th>Apple</th>
+    <th>Amazon</th>
   </tr><?php
 for($x = 9; $x >= 0; $x--){
           ?><tr> 
