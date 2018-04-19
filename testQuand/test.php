@@ -1,12 +1,6 @@
 <html>
 <?php
 include("php-quandl-master/Quandl.php");
-?>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/data.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<div id="container" style="height: 400px; max-width: 800px; margin: 0 auto"></div>
-<?php
 //$api_key = $_SERVER['QUANDL_KEY'] ?: "bcw-wtRJ3ucCAZJQu4i8";
 $api_key = "bcw-wtRJ3ucCAZJQu4i8";
 $quandl = new Quandl($api_key, 'json');
@@ -35,7 +29,10 @@ $quandl->no_ssl_verify = true;
 $quandl->timeout = 60;
 */
 ?>
-<div id="container" style="min-width:400px; height: 400px;"></div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<div id="container" style="height: 400px; max-width: 800px; margin: 0 auto"></div>
 <table id='datatable'>
   <tr>
     <th>Dates</th>
