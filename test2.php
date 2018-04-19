@@ -53,15 +53,7 @@ for($x = 9; $x >= 0; $x--){
 </table>
     
 <script>
-$(function () {
-
-{
-    Highcharts.setOptions({
-        colors: ['#0099cc']
-    });
-  }
-
-    $('container').highcharts({
+Highcharts.chart('container',{
         data: {
             table: 'datatable'
         },
@@ -112,6 +104,5 @@ $(function () {
             }
         }
     });
-});
 </script>
 </html>
