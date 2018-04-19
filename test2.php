@@ -35,22 +35,22 @@ $quandl->no_ssl_verify = true;
 $quandl->timeout = 60;
 */
 ?>
-<div id="container" style="width:400px; height: 400px;">
+
 <table id='datatable'>
   <tr>
     <th>Dates</th>
     <th>Prices</th>  
-  </tr><?
+  </tr><?php
 
 for($x = 9; $x >= 0; $x--){
           ?><tr> 
           <th><?=$dates[$x];?></th>   
           <th><?=trim($prices[$x]);?></th> 
-          </tr>  <?
+          </tr>  <?php
   };
 ?>
 </table>
-    </div>
+    
 <script>
 $(function () {
 
@@ -75,6 +75,7 @@ $(function () {
         },
         yAxis: {
             allowDecimals: false,
+            min:0,
             //min:80,
             //max:100,
             //tickInterval:10,
@@ -91,6 +92,17 @@ $(function () {
                   color: '#000000'
                 }
             }
+        },
+        legend:{
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
         },
         tooltip: {
             formatter: function () {
