@@ -57,8 +57,7 @@ $quandl->timeout = 60;
 for($x = 9; $x >= 0; $x--){
           ?><tr> 
           <th><?=$dates[$x];?></th>   
-          <th><?=trim($prices[$x]);?></th>
-          <th><?=$dates2[$x];?></th>   
+          <th><?=trim($prices[$x]);?></th>  
           <th><?=trim($prices2[$x]);?></th>
     
           </tr>  <?php
