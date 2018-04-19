@@ -60,8 +60,7 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'Tokyo',
-        data: <?php echo $prices[0]; ?>, <?php echo $prices[1]; ?>, <?php echo $prices[2]; ?>, 
-        <?php echo $prices[3]; ?>, <?php echo $prices[4]; ?>, <?php echo $prices[5]; ?>, <?php echo $prices[6]; ?>, <?php echo $prices[7]; ?>, <?php echo $prices[8]; ?>, <?php echo $prices[9]; ?>, <?php echo $prices[10]; ?>, <?php echo $prices[11]; ?>
+        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
 
     }]
 });
