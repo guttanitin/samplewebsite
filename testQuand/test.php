@@ -42,8 +42,8 @@ $quandl->timeout = 60;
     Highcharts.setOptions({
         colors: ['#084f83']
     });
-  }
-
+  
+        }
 
 $(function () {
 
@@ -80,14 +80,6 @@ plotOptions: {
             opposite: true,
             linkedTo:1
 
-        },
-          
-        labels: {
-                format: '{value}',
-                style: {
-                    color: ['#000000']
-                }
-            }
         }],
         tooltip: {
             shared: true,
