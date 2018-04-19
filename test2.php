@@ -9,6 +9,11 @@ $data = $quandl->getSymbol("WIKI/AAPL", [
 	"rows"            => 10,
 	"column_index"    => 4, 
 ]);
+    $data2 = $quandl->getSymbol("WIKI/AMZN", [
+	"sort_order"      => "desc",
+	"rows"            => 10,
+	"column_index"    => 4, 
+]);
 $dates = array();
 $prices = array();
 $obj2 = json_decode( $data, true );
@@ -17,6 +22,19 @@ $value = $obj2['dataset']['data'];
 foreach ($value as $key){
     $dates[] = $key[0];
     $prices[] = $key[1];
+    //echo $key[0]. ',' . $key[1];
+   // echo "<br></br>";
+    //echo $value['data'];
+    //echo "<br></br>";
+}
+$dates2 = array();
+$prices2 = array();
+$obj3 = json_decode( $data2, true );
+//file_put_contents('test.json', json_encode($obj2));
+$values = $obj3['dataset']['data'];
+foreach ($values as $keys){
+    $dates2[] = $keys[0];
+    $prices2[] = $keys[1];
     //echo $key[0]. ',' . $key[1];
    // echo "<br></br>";
     //echo $value['data'];
@@ -39,7 +57,10 @@ $quandl->timeout = 60;
 for($x = 9; $x >= 0; $x--){
           ?><tr> 
           <th><?=$dates[$x];?></th>   
-          <th><?=trim($prices[$x]);?></th> 
+          <th><?=trim($prices[$x]);?></th>
+          <th><?=$dates2[$x];?></th>   
+          <th><?=trim($prices2[$x]);?></th>
+    
           </tr>  <?php
   };
 ?>
@@ -67,7 +88,7 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Apple Price Change in Last 10 Days'
+            text: 'Apple & Amazon Price Changes in Last 10 Days'
         },
         credits: {
             enabled: false
