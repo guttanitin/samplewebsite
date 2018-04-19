@@ -67,7 +67,7 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Price Change in Last 10 Day'
+            text: 'Apple Price Change in Last 10 Days'
         },
         credits: {
             enabled: false
