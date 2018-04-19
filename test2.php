@@ -1,6 +1,12 @@
 <html>
-<?php
-include("testQuand/php-quandl-master/Quandl.php");
+<?
+include("php-quandl-master/Quandl.php");
+?>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<div id="container" style="height: 400px; max-width: 800px; margin: 0 auto"></div>
+<?
 //$api_key = $_SERVER['QUANDL_KEY'] ?: "bcw-wtRJ3ucCAZJQu4i8";
 $api_key = "bcw-wtRJ3ucCAZJQu4i8";
 $quandl = new Quandl($api_key, 'json');
@@ -29,70 +35,70 @@ $quandl->no_ssl_verify = true;
 $quandl->timeout = 60;
 */
 ?>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/data.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<div id="container" style="width:400px; height: 400px;">
+<table id='datatable'>
+  <tr>
+    <th>Dates</th>
+    <th>Prices</th>  
+  </tr><?
 
-<div id="container" style="width: 1200px; height: 600px; margin: 0 auto"></div>
+for($x = 9; $x >= 0; $x--){
+          ?><tr> 
+          <th><?=$dates[$x];?></th>   
+          <th><?=trim($prices[$x]);?></th> 
+          </tr>  <?
+  };
+?>
+</table>
+    </div>
 <script>
+$(function () {
+
 {
     Highcharts.setOptions({
-        colors: ['#084f83']
+        colors: ['#0099cc']
     });
   }
 
-
-$(function () {
-
     $('#container').highcharts({
+        data: {
+            table: 'datatable'
+        },
+        chart: {
+            type: 'column'
+        },
         title: {
-            text: 'Daily Call Volume(200 days)'
+            text: 'Price Change in Last 10 Day'
         },
-        xAxis: [{
-            categories: [<?php echo join($DT, ",") ?>]
-        }],
-      credits: {
-      enabled: false
-  },
-plotOptions: {
-    column: {           
-        groupPadding: 0.5,
-        pointWidth: 5                         
-    }
-},
-        yAxis: [{ // Primary yAxis
-            labels: {
-                format: '{value}',
-                style: {
-                    color: '#000000'
-                }
-                
-            },
+        credits: {
+            enabled: false
+        },
+        yAxis: {
+            allowDecimals: false,
+            //min:80,
+            //max:100,
+            //tickInterval:10,
             title: {
-                text: 'Number of Complaints',
-                style: {
-                    color: '#000000'
-                }
-            },
-            opposite: true,
-            linkedTo:1
-
-        }],
-        tooltip: {
-            shared: true,
-            color: ['#000000']
+                text: '<b>Dates</b>'                
+            }
         },
-        series: [{
-            name: 'Prices',
-            type: 'column',
-            colorByPoint: true,
-            colors: ['#ff0000'],
-            yAxis: 1,
-            data: [<?php echo join($prices, ',') ?>],
-
-        }]
+        xAxis: {
+          title: {
+                text: '<b>Prices</b>'                
+            },
+            labels: {
+                style: {
+                  color: '#000000'
+                }
+            }
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name + '</b><br/>' +
+                    this.point.name + ' - ' + this.point.y + ' Defect(s)';
+            }
+        }
     });
 });
-
 </script>
 </html>
