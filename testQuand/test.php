@@ -35,46 +35,75 @@ $quandl->timeout = 60;
 ?>
 
 <html>
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     <script>
-Highcharts.chart('container', {
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'Monthly Average Rainfall'
-    },
-    subtitle: {
-        text: 'Source: WorldClimate.com'
-    },
-    xAxis: {
-        categories: <? echo join($dates,',') ?>,
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Rainfall (mm)'
-        }
-    },
-    tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
-    },
-    plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-        }
-    },
-    series: [{
-        name: 'Prices',
-        data: <? echo join($prices, ',') ?>
+<script>
+{
+    Highcharts.setOptions({
+        colors: ['#084f83']
+    });
+  }
 
-    }]
+
+$(function () {
+
+    $('#container').highcharts({
+        title: {
+            text: 'Daily Call Volume(200 days)'
+        },
+        xAxis: [{
+            categories: [<?php echo join($dates, ",") ?>]
+        }],
+      credits: {
+      enabled: false
+  },
+plotOptions: {
+    column: {           
+        groupPadding: 0.5,
+        pointWidth: 5                         
+    }
+},
+        yAxis: [{ // Primary yAxis
+            labels: {
+                format: '{value}',
+                style: {
+                    color: '#000000'
+                }
+                
+            },
+            title: {
+                text: 'Prices in last 10 days',
+                style: {
+                    color: '#000000'
+                }
+            },
+            opposite: true,
+            linkedTo:1
+
+        },
+          
+        labels: {
+                format: '{value}',
+                style: {
+                    color: ['#000000']
+                }
+            }
+        }],
+        tooltip: {
+            shared: true,
+            color: ['#000000']
+        },
+        series: [{
+            name: 'Prices',
+            type: 'column',
+            colorByPoint: true,
+            colors: ['#ff0000'],
+            yAxis: 1,
+            data: [<?php echo join($prices, ',') ?>]
+        }
+        ]
+    });
 });
-             </script>
+
+</script>
 </html>
