@@ -15,7 +15,8 @@ $data = $quandl->getSymbol("WIKI/AAPL", [
 	"rows"            => 10,
 	"column_index"    => 4, 
 ]);
-
+$dates = array();
+$prices = array();
 $obj2 = json_decode( $data, true );
 //file_put_contents('test.json', json_encode($obj2));
 $value = $obj2['dataset']['data'];

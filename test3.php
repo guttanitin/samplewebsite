@@ -1,5 +1,8 @@
 <?php
-$prices[]= {1,2,3,4,5,6,7,8,9,10,11,12};
+$prices = array();
+for($i = 0; $i < 12; $i++){
+    $prices[]= $i;
+}
 ?>
 <html>
     <script src="https://code.highcharts.com/highcharts.js"></script>
