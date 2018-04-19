@@ -3,8 +3,9 @@
 include("php-quandl-master/Quandl.php");
 ?>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<div id="container" style="height: 400px; max-width: 800px; margin: 0 auto"></div>
 <?php
 //$api_key = $_SERVER['QUANDL_KEY'] ?: "bcw-wtRJ3ucCAZJQu4i8";
 $api_key = "bcw-wtRJ3ucCAZJQu4i8";
