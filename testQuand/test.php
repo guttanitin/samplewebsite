@@ -1,3 +1,4 @@
+<html>
 <?php
 include("php-quandl-master/Quandl.php");
 ?>
@@ -34,8 +35,8 @@ $quandl->timeout = 60;
 */
 ?>
 
-<html>
-    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    <div id="container" style="width: 1200px; height: 600px; margin: 0 auto"></div>
     <script>
 <script>
 {
@@ -49,7 +50,7 @@ $(function () {
 
     $('#container').highcharts({
         title: {
-            text: 'Daily Call Volume(200 days)'
+            text: 'Price Change over 10 Days'
         },
         xAxis: [{
             categories: [<?php echo join($dates, ",") ?>]
