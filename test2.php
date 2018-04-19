@@ -76,7 +76,7 @@ $(function () {
 
 {
     Highcharts.setOptions({
-        colors: ['#0099cc']
+        colors: ['#0099cc','#000000']
     });
   }
 
