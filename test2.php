@@ -103,12 +103,12 @@ $(function () {
             //max:100,
             //tickInterval:10,
             title: {
-                text: '<b>Dates</b>'                
+                text: '<b>Prices</b>'                
             }
         },
         xAxis: {
           title: {
-                text: '<b>Prices</b>'                
+                text: '<b>Dates</b>'                
             },
             labels: {
                 style: {
