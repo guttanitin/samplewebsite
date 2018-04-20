@@ -186,7 +186,7 @@ foreach ($value as $key){
     $nvdclosedates[] = $key[0];
     $nvdcloseprices[] = $key[1];
 }
-//Facebook opening prices
+//Nvidia opening prices
 $nvdopendates = array();
 $nvdopenprices = array();
 $obj2 = json_decode( $data, true );
@@ -200,9 +200,232 @@ foreach ($value as $key){
 $nvdchangeprice = $nvdcloseprices[0] - $nvdcloseprices[1];
 $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
 
+// SPY
+//closing price
+$data = $quandl->getSymbol("WIKI/SPY", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 4 
+]);
+//opening price
+$data2 = $quandl->getSymbol("WIKI/SPY", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 1 
+]);
+//SPY closing prices
+$nvdclosedates = array();
+$nvdcloseprices = array();
+$obj = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj['dataset']['data'];
+foreach ($value as $key){
+    $spyclosedates[] = $key[0];
+    $spycloseprices[] = $key[1];
+}
+//SPY opening prices
+$spyopendates = array();
+$spyopenprices = array();
+$obj2 = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj2['dataset']['data'];
+foreach ($value as $key){
+    $spyopendates[] = $key[0];
+    $spyopenprices[] = $key[1];
+}
+//Calculate change over day & % change
+$spychangeprice = $spycloseprices[0] - $spycloseprices[1];
+$spypercchange = round(($spychangeprice / $spyopenprices[0]) * 100.0,2);
+
+// Ford
+//closing price
+$data = $quandl->getSymbol("WIKI/F", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 4 
+]);
+//opening price
+$data2 = $quandl->getSymbol("WIKI/F", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 1 
+]);
+//F closing prices
+$fclosedates = array();
+$fcloseprices = array();
+$obj = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj['dataset']['data'];
+foreach ($value as $key){
+    $fclosedates[] = $key[0];
+    $fcloseprices[] = $key[1];
+}
+//F opening prices
+$fopendates = array();
+$fopenprices = array();
+$obj2 = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj2['dataset']['data'];
+foreach ($value as $key){
+    $fopendates[] = $key[0];
+    $fopenprices[] = $key[1];
+}
+//Calculate change over day & % change
+$fchangeprice = $fcloseprices[0] - $fcloseprices[1];
+$fpercchange = round(($fchangeprice / $fopenprices[0]) * 100.0,2);
+
+// Fitbit
+//closing price
+$data = $quandl->getSymbol("WIKI/FIT", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 4 
+]);
+//opening price
+$data2 = $quandl->getSymbol("WIKI/FIT", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 1 
+]);
+//FIT closing prices
+$fitclosedates = array();
+$fitcloseprices = array();
+$obj = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj['dataset']['data'];
+foreach ($value as $key){
+    $fitclosedates[] = $key[0];
+    $fitcloseprices[] = $key[1];
+}
+//FIT opening prices
+$fitopendates = array();
+$fitopenprices = array();
+$obj2 = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj2['dataset']['data'];
+foreach ($value as $key){
+    $fitopendates[] = $key[0];
+    $fitopenprices[] = $key[1];
+}
+//Calculate change over day & % change
+$fitchangeprice = $fitcloseprices[0] - $fitcloseprices[1];
+$fitpercchange = round(($fitchangeprice / $fitopenprices[0]) * 100.0,2);
+
+// GE
+//closing price
+$data = $quandl->getSymbol("WIKI/GE", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 4 
+]);
+//opening price
+$data2 = $quandl->getSymbol("WIKI/GE", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 1 
+]);
+//GE closing prices
+$geclosedates = array();
+$gecloseprices = array();
+$obj = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj['dataset']['data'];
+foreach ($value as $key){
+    $geclosedates[] = $key[0];
+    $gecloseprices[] = $key[1];
+}
+//GE opening prices
+$geopendates = array();
+$geopenprices = array();
+$obj2 = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj2['dataset']['data'];
+foreach ($value as $key){
+    $geopendates[] = $key[0];
+    $geopenprices[] = $key[1];
+}
+//Calculate change over day & % change
+$gechangeprice = $gecloseprices[0] - $gecloseprices[1];
+$gepercchange = round(($gechangeprice / $geopenprices[0]) * 100.0,2);
+
+// BAC
+//closing price
+$data = $quandl->getSymbol("WIKI/BAC", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 4 
+]);
+//opening price
+$data2 = $quandl->getSymbol("WIKI/BAC", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 1 
+]);
+//BAC closing prices
+$bacclosedates = array();
+$baccloseprices = array();
+$obj = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj['dataset']['data'];
+foreach ($value as $key){
+    $bacclosedates[] = $key[0];
+    $baccloseprices[] = $key[1];
+}
+//BAC opening prices
+$bacopendates = array();
+$bacopenprices = array();
+$obj2 = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj2['dataset']['data'];
+foreach ($value as $key){
+    $bacopendates[] = $key[0];
+    $bacopenprices[] = $key[1];
+}
+//Calculate change over day & % change
+$bacchangeprice = $baccloseprices[0] - $baccloseprices[1];
+$bacpercchange = round(($bacchangeprice / $bacopenprices[0]) * 100.0,2);
+
+// AMD
+//closing price
+$data = $quandl->getSymbol("WIKI/AMD", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 4 
+]);
+//opening price
+$data2 = $quandl->getSymbol("WIKI/AMD", [
+	"sort_order"      => "desc",
+	"rows"            => 2,
+	"column_index"    => 1 
+]);
+//AMD closing prices
+$amdclosedates = array();
+$amdcloseprices = array();
+$obj = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj['dataset']['data'];
+foreach ($value as $key){
+    $amdclosedates[] = $key[0];
+    $amdcloseprices[] = $key[1];
+}
+//AMD opening prices
+$amdopendates = array();
+$amdopenprices = array();
+$obj2 = json_decode( $data, true );
+//file_put_contents('test.json', json_encode($obj2));
+$value = $obj2['dataset']['data'];
+foreach ($value as $key){
+    $amdopendates[] = $key[0];
+    $amdopenprices[] = $key[1];
+}
+//Calculate change over day & % change
+$amdchangeprice = $amdcloseprices[0] - $amdcloseprices[1];
+$amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
+
 ?>
 <html lang="en">
     <head>
+        <title>Dashboard</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -222,21 +445,92 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
           "iDisplayLength": 10
           //"bJQueryUI":true,
         });
+          $('#datatables2').dataTable({
+          "sPaginationType": "full_numbers",
+          "fixedHeader": true,
+          "iDisplayLength": 10
+          //"bJQueryUI":true,
+        });
       });
     </script>
     </head>
     <body>
         <div class ="container-fluid">
             <div class = "row">
-            <div class = "col col-sm-4"></div>
+            <div class = "col col-sm-5"></div>
             <div class = "col col-sm-4">
             <h3> <b>User Dashboard </b></h3>
-            <div class = "col col-sm-4"></div>
+            <div class = "col col-sm-3"></div>
             </div>
             </div>
             <hr>
             <div class ="row">
                 <div class ="col-sm-5">
+                    <label>Portfolio Tracking</label>
+                    <table id="datatables2" class ="display">
+                        <thead>
+                            <tr>
+                            <th> Symbol</th>
+                            <th> Company</th>
+                            <th> Open Price</th>
+                            <th> Close Price</th>
+                            <th> Change</th>
+                            <th> %-Change</th>
+                            </tr>    
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=F"> F </a></td>
+                                <td> Ford </td>
+                                <td> <? echo $fopenprices[0] ?> </td>
+                                <td> <? echo $fcloseprices[0] ?></td>
+                                <td> <? echo $fchangeprice ?></td>
+                                <td> <? echo $fpercchange ?></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=FIT"> FIT </a></td>
+                                <td> Fitbit </td>
+                                <td> <? echo $fitopenprices[0] ?> </td>
+                                <td> <? echo $fitcloseprices[0] ?></td>
+                                <td> <? echo $fitchangeprice ?></td>
+                                <td> <? echo $fitpercchange ?></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=GE"> GE </a></td>
+                                <td> General Electric </td>
+                                <td> <? echo $gebopenprices[0] ?> </td>
+                                <td> <? echo $gebcloseprices[0] ?></td>
+                                <td> <? echo $gebchangeprice ?></td>
+                                <td> <? echo $gebpercchange ?></td>
+                            </tr>
+                            <tr>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=BAC"> BAC </a></td>
+                                <td> Bank of America </td>
+                                <td> <? echo $bacopenprices[0] ?> </td>
+                                <td> <? echo $baccloseprices[0] ?></td>
+                                <td> <? echo $bacchangeprice ?></td>
+                                <td> <? echo $bacpercchange ?></td>
+                            </tr>
+                            <tr>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AMD"> AMD </a></td>
+                                <td> Advanced Micro Devices </td>
+                                <td> <? echo $amdopenprices[0] ?> </td>
+                                <td> <? echo $amdcloseprices[0] ?></td>
+                                <td> <? echo $amdchangeprice ?></td>
+                                <td> <? echo $amdpercchange ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class = "col-sm-7">
+                    <iframe src="https://nitintest.azurewebsites.net/portfoliograph.php" width="100%" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
+                </div>
+            
+            </div>
+            <hr>
+            <div class ="row">
+                <div class ="col-sm-5">
+                    <label>Watch List</label>
                     <table id="datatables" class ="display">
                         <thead>
                             <tr>
@@ -289,6 +583,14 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                                 <td> <? echo $nvdchangeprice ?></td>
                                 <td> <? echo $nvdpercchange ?></td>
                             </tr>
+                            <tr>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=SPY"> SPY </a></td>
+                                <td> S'&amp;'P 500 ETF </td>
+                                <td> <? echo $spyopenprices[0] ?> </td>
+                                <td> <? echo $spycloseprices[0] ?></td>
+                                <td> <? echo $spychangeprice ?></td>
+                                <td> <? echo $spypercchange ?></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -297,8 +599,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                 </div>
             
             </div>
-            <hr>
-        
+            
         </div>
     </body>
 </html>
