@@ -86,7 +86,6 @@ $quandl->no_ssl_verify = true;
 $quandl->timeout = 60;
 */
 ?>
-<div id="container" style = "min-width:400px; height: 400px"></div>
 <table id='datatable'>
   <tr>
     <th>Dates</th>

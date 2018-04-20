@@ -250,7 +250,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                         </thead>
                         <tbody>
                             <tr>
-                                <td> AAPL</td>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AAPL"> AAPL </a></td>
                                 <td> Apple </td>
                                 <td> <? echo $openprices[0] ?> </td>
                                 <td> <? echo $closeprices[0] ?></td>
@@ -258,7 +258,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                                 <td> <? echo $percchange ?></td>
                             </tr>
                             <tr>
-                                <td> TSLA</td>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=TSLA"> TSLA </a></td>
                                 <td> TESLA </td>
                                 <td> <? echo $tslopenprices[0] ?> </td>
                                 <td> <? echo $tslcloseprices[0] ?></td>
@@ -266,7 +266,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                                 <td> <? echo $tslpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> FB</td>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=FB"> FB </a></td>
                                 <td> Facebook </td>
                                 <td> <? echo $fbopenprices[0] ?> </td>
                                 <td> <? echo $fbcloseprices[0] ?></td>
@@ -274,7 +274,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                                 <td> <? echo $fbpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> NFLX</td>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AAPL"> NFLX </a></td>
                                 <td> Netflix </td>
                                 <td> <? echo $nflxopenprices[0] ?> </td>
                                 <td> <? echo $nflxcloseprices[0] ?></td>
@@ -282,7 +282,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                                 <td> <? echo $nflxpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> NVDA</td>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AAPL"> NVDA </a></td>
                                 <td> Nvidia </td>
                                 <td> <? echo $nvdopenprices[0] ?> </td>
                                 <td> <? echo $nvdcloseprices[0] ?></td>
