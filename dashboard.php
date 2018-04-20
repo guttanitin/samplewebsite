@@ -236,7 +236,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
             </div>
             <hr>
             <div class ="row">
-                <div class ="col col-sm-4">
+                <div class ="col-sm-5">
                     <table id="datatables" class ="display">
                         <thead>
                             <tr>
@@ -292,7 +292,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                         </tbody>
                     </table>
                 </div>
-                <div class ="col col-sm-8">
+                <div class ="col-sm-7">
                     <iframe src="https://nitintest.azurewebsites.net/test2.php" width="600" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
                 </div>
             
