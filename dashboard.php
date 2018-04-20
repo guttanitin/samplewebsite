@@ -297,6 +297,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                 </div>
             
             </div>
+            <hr>
         
         </div>
     </body>
