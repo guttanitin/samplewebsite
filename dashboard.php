@@ -274,7 +274,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                                 <td> <? echo $fbpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AAPL"> NFLX </a></td>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=NFLX"> NFLX </a></td>
                                 <td> Netflix </td>
                                 <td> <? echo $nflxopenprices[0] ?> </td>
                                 <td> <? echo $nflxcloseprices[0] ?></td>
@@ -282,7 +282,7 @@ $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
                                 <td> <? echo $nflxpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AAPL"> NVDA </a></td>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=NVDA"> NVDA </a></td>
                                 <td> Nvidia </td>
                                 <td> <? echo $nvdopenprices[0] ?> </td>
                                 <td> <? echo $nvdcloseprices[0] ?></td>

@@ -87,7 +87,7 @@ $(function () {
         tooltip: {
             formatter: function () {
                 return '<b>' + this.series.name + '</b><br/>' +
-                    this.point.x + ' - ' + this.point.y + ' Dollars(s)';
+                    this.point.xAxis + ' - ' + this.point.y + ' Dollars(s)';
             }
         }
     });
