@@ -55,7 +55,7 @@ $(function () {
     });
   }
 
-    $('#container').highcharts({
+    $('container').highcharts({
         data: {
             table: 'datatable'
         },

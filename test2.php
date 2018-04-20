@@ -14,6 +14,22 @@ $data = $quandl->getSymbol("WIKI/AAPL", [
 	"rows"            => 10,
 	"column_index"    => 4, 
 ]);
+$data3 = $quandl->getSymbol("WIKI/NFLX", [
+	"sort_order"      => "desc",
+	"rows"            => 10,
+	"column_index"    => 4, 
+]);
+$data4 = $quandl->getSymbol("WIKI/FB", [
+	"sort_order"      => "desc",
+	"rows"            => 10,
+	"column_index"    => 4, 
+]);
+
+$data5 = $quandl->getSymbol("WIKI/NVDA", [
+	"sort_order"      => "desc",
+	"rows"            => 10,
+	"column_index"    => 4, 
+]);
 $dates = array();
 $prices = array();
 $obj2 = json_decode( $data, true );
@@ -22,10 +38,6 @@ $value = $obj2['dataset']['data'];
 foreach ($value as $key){
     $dates[] = $key[0];
     $prices[] = $key[1];
-    //echo $key[0]. ',' . $key[1];
-   // echo "<br></br>";
-    //echo $value['data'];
-    //echo "<br></br>";
 }
 $dates2 = array();
 $prices2 = array();
@@ -35,10 +47,36 @@ $values = $obj3['dataset']['data'];
 foreach ($values as $keys){
     $dates2[] = $keys[0];
     $prices2[] = $keys[1];
-    //echo $key[0]. ',' . $key[1];
-   // echo "<br></br>";
-    //echo $value['data'];
-    //echo "<br></br>";
+}
+    
+$dates3 = array();
+$prices3 = array();
+$obj4 = json_decode( $data3, true );
+//file_put_contents('test.json', json_encode($obj2));
+$values = $obj4['dataset']['data'];
+foreach ($values as $keys){
+    $dates3[] = $keys[0];
+    $prices3[] = $keys[1];
+}
+
+$dates4 = array();
+$prices4 = array();
+$obj5 = json_decode( $data4, true );
+//file_put_contents('test.json', json_encode($obj2));
+$values = $obj5['dataset']['data'];
+foreach ($values as $keys){
+    $dates4[] = $keys[0];
+    $prices4[] = $keys[1];
+}
+
+$dates5 = array();
+$prices5 = array();
+$obj6 = json_decode( $data5, true );
+//file_put_contents('test.json', json_encode($obj2));
+$values = $obj6['dataset']['data'];
+foreach ($values as $keys){
+    $dates5[] = $keys[0];
+    $prices5[] = $keys[1];
 }
 //echo "<br></br>";
 //print_r($obj2);
@@ -54,12 +92,18 @@ $quandl->timeout = 60;
     <th>Dates</th>
     <th>Apple</th>
     <th>Amazon</th>
+    <th>Netflix</th>
+    <th>Facebook</th>
+    <th>NVIDIA</th>
   </tr><?php
 for($x = 9; $x >= 0; $x--){
           ?><tr> 
           <th><?=$dates[$x];?></th>   
           <th><?=trim($prices[$x]);?></th>  
           <th><?=trim($prices2[$x]);?></th>
+          <th><?=trim($prices3[$x]);?></th>  
+          <th><?=trim($prices4[$x]);?></th>
+          <th><?=trim($prices5[$x]);?></th>
     
           </tr>  <?php
   };
@@ -76,7 +120,7 @@ $(function () {
 
 {
     Highcharts.setOptions({
-        colors: ['#0099cc','#000000']
+        colors: ['#0099cc','#000000', '#ff3300', '#6600cc', '#0033cc']
     });
   }
 
