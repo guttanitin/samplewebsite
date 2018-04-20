@@ -129,10 +129,10 @@ $(function () {
             table: 'datatable'
         },
         chart: {
-            type: 'area'
+            type: 'line'
         },
         title: {
-            text: 'Watch List Price Changes in Last 10 Days'
+            text: 'Portfolio Performance in Last 10 Days'
         },
         credits: {
             enabled: false
