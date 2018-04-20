@@ -42,7 +42,7 @@ foreach ($value as $key){
 }
 
 $changeprice = $closeprices[0] - $closeprices[1];
-$percchange = (($openprices[0] - $closeprices[0]) / $openprices[0]) * 100;
+$percchange = ($changeprice / $openprices[0]) * 100.0;
 ?>
 <html lang="en">
     <head>
@@ -71,7 +71,7 @@ $percchange = (($openprices[0] - $closeprices[0]) / $openprices[0]) * 100;
     </head>
     <body>
         <div class ="container-fluid">
-        
+            <h3> <b>User Dashboard </b></h3>
             <div class ="row">
                 <div class ="col col-sm-5">
                     <table id="datatables" class ="display">
@@ -98,7 +98,7 @@ $percchange = (($openprices[0] - $closeprices[0]) / $openprices[0]) * 100;
                     </table>
                 </div>
                 <div class ="col col-sm-7">
-                    <iframe src="https://nitintest.azurewebsites.net/test2.php" style="height:200px;width:600px"></iframe>
+                    <iframe src="https://nitintest.azurewebsites.net/test2.php" width="600" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
                 </div>
             
             </div>
