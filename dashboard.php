@@ -42,7 +42,7 @@ foreach ($value as $key){
 }
 
 $changeprice = $closeprices[0] - $closeprices[1];
-$percchange = ($changeprice / $openprices[0]) * 100.0;
+$percchange = round(($changeprice / $openprices[0]) * 100.0,2);
 ?>
 <html lang="en">
     <head>
