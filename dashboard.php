@@ -200,42 +200,42 @@ foreach ($value as $key){
 $nvdchangeprice = $nvdcloseprices[0] - $nvdcloseprices[1];
 $nvdpercchange = round(($nvdchangeprice / $nvdopenprices[0]) * 100.0,2);
 
-// SPY
+// COST
 //closing price
-$data = $quandl->getSymbol("WIKI/SPY", [
+$data = $quandl->getSymbol("WIKI/COST", [
 	"sort_order"      => "desc",
 	"rows"            => 2,
 	"column_index"    => 4 
 ]);
 //opening price
-$data2 = $quandl->getSymbol("WIKI/SPY", [
+$data2 = $quandl->getSymbol("WIKI/COST", [
 	"sort_order"      => "desc",
 	"rows"            => 2,
 	"column_index"    => 1 
 ]);
-//SPY closing prices
-$spyclosedates = array();
-$spycloseprices = array();
+//COST closing prices
+$costclosedates = array();
+$costcloseprices = array();
 $obj = json_decode( $data, true );
 //file_put_contents('test.json', json_encode($obj2));
 $value = $obj['dataset']['data'];
 foreach ($value as $key){
-    $spyclosedates[] = $key[0];
-    $spycloseprices[] = $key[1];
+    $costclosedates[] = $key[0];
+    $costcloseprices[] = $key[1];
 }
-//SPY opening prices
-$spyopendates = array();
-$spyopenprices = array();
+//COST opening prices
+$costopendates = array();
+$costopenprices = array();
 $obj2 = json_decode( $data, true );
 //file_put_contents('test.json', json_encode($obj2));
 $value = $obj2['dataset']['data'];
 foreach ($value as $key){
-    $spyopendates[] = $key[0];
-    $spyopenprices[] = $key[1];
+    $costopendates[] = $key[0];
+    $costopenprices[] = $key[1];
 }
 //Calculate change over day & % change
-$spychangeprice = $spycloseprices[0] - $spycloseprices[1];
-$spypercchange = round(($spychangeprice / $spyopenprices[0]) * 100.0,2);
+$costchangeprice = $costcloseprices[0] - $costcloseprices[1];
+$costpercchange = round(($costchangeprice / $costopenprices[0]) * 100.0,2);
 
 // Ford
 //closing price
@@ -584,12 +584,12 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $nvdpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=SPY"> SPY </a></td>
-                                <td> S&amp;P 500 ETF </td>
-                                <td> <? echo $spyopenprices[0] ?> </td>
-                                <td> <? echo $spycloseprices[0] ?></td>
-                                <td> <? echo $spychangeprice ?></td>
-                                <td> <? echo $spypercchange ?></td>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=COST"> COST </a></td>
+                                <td> Costco </td>
+                                <td> <? echo $costopenprices[0] ?> </td>
+                                <td> <? echo $costcloseprices[0] ?></td>
+                                <td> <? echo $costchangeprice ?></td>
+                                <td> <? echo $costpercchange ?></td>
                             </tr>
                         </tbody>
                     </table>
