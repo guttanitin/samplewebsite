@@ -66,7 +66,6 @@ $percchange = ($changeprice / $openprices[0]) * 100.0;
           //"bJQueryUI":true,
         });
       });
-      });
     </script>
     </head>
     <body>
