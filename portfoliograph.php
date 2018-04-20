@@ -120,7 +120,7 @@ $(function () {
 
 {
     Highcharts.setOptions({
-        colors: ['#0099cc','#000000', '#ff3300', '#6600cc', '#0033cc']
+        colors: ['#0099cc','#666666', '#ff3300', '#6600cc', '#0033cc']
     });
   }
 
@@ -142,7 +142,7 @@ $(function () {
         },
         yAxis: {
             allowDecimals: true,
-            //min:0,
+            min:0,
             //min:80,
             //max:100,
             //tickInterval:10,
