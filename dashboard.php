@@ -71,12 +71,13 @@ $percchange = round(($changeprice / $openprices[0]) * 100.0,2);
     <body>
         <div class ="container-fluid">
             <div class = "row">
-            <div class = "col col-sm-3"></div>
-            <div class = "col col-sm-6">
+            <div class = "col col-sm-4"></div>
+            <div class = "col col-sm-4">
             <h3> <b>User Dashboard </b></h3>
-            <div class = "col col-sm-3"></div>
+            <div class = "col col-sm-4"></div>
             </div>
             </div>
+            <hr>
             <div class ="row">
                 <div class ="col col-sm-5">
                     <table id="datatables" class ="display">
