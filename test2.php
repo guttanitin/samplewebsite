@@ -9,7 +9,7 @@ $data = $quandl->getSymbol("WIKI/AAPL", [
 	"rows"            => 10,
 	"column_index"    => 4, 
 ]);
-    $data2 = $quandl->getSymbol("WIKI/AMZN", [
+    $data2 = $quandl->getSymbol("WIKI/TSLA", [
 	"sort_order"      => "desc",
 	"rows"            => 10,
 	"column_index"    => 4, 
@@ -91,7 +91,7 @@ $quandl->timeout = 60;
   <tr>
     <th>Dates</th>
     <th>Apple</th>
-    <th>Amazon</th>
+    <th>TESLA</th>
     <th>Netflix</th>
     <th>Facebook</th>
     <th>NVIDIA</th>
@@ -132,7 +132,7 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Apple & Amazon Price Changes in Last 10 Days'
+            text: 'Watch List Price Changes in Last 10 Days'
         },
         credits: {
             enabled: false
