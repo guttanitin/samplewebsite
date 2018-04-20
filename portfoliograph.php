@@ -9,7 +9,7 @@ $data = $quandl->getSymbol("WIKI/F", [
 	"rows"            => 10,
 	"column_index"    => 4, 
 ]);
-    $data2 = $quandl->getSymbol("WIKI/FIT", [
+    $data2 = $quandl->getSymbol("WIKI/UA", [
 	"sort_order"      => "desc",
 	"rows"            => 10,
 	"column_index"    => 4, 
@@ -91,7 +91,7 @@ $quandl->timeout = 60;
   <tr>
     <th>Dates</th>
     <th>Ford</th>
-    <th>Fitbit</th>
+    <th>Under Armour</th>
     <th>GE</th>
     <th>BAC</th>
     <th>AMD</th>

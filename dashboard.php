@@ -274,42 +274,42 @@ foreach ($value as $key){
 $fchangeprice = $fcloseprices[0] - $fcloseprices[1];
 $fpercchange = round(($fchangeprice / $fopenprices[0]) * 100.0,2);
 
-// Fitbit
+// Under Armour
 //closing price
-$data = $quandl->getSymbol("WIKI/FIT", [
+$data = $quandl->getSymbol("WIKI/UA", [
 	"sort_order"      => "desc",
 	"rows"            => 2,
 	"column_index"    => 4 
 ]);
 //opening price
-$data2 = $quandl->getSymbol("WIKI/FIT", [
+$data2 = $quandl->getSymbol("WIKI/UA", [
 	"sort_order"      => "desc",
 	"rows"            => 2,
 	"column_index"    => 1 
 ]);
-//FIT closing prices
-$fitclosedates = array();
-$fitcloseprices = array();
+//UA closing prices
+$uaclosedates = array();
+$uacloseprices = array();
 $obj = json_decode( $data, true );
 //file_put_contents('test.json', json_encode($obj2));
 $value = $obj['dataset']['data'];
 foreach ($value as $key){
-    $fitclosedates[] = $key[0];
-    $fitcloseprices[] = $key[1];
+    $uaclosedates[] = $key[0];
+    $uacloseprices[] = $key[1];
 }
-//FIT opening prices
-$fitopendates = array();
-$fitopenprices = array();
+//UA opening prices
+$uaopendates = array();
+$uaopenprices = array();
 $obj2 = json_decode( $data, true );
 //file_put_contents('test.json', json_encode($obj2));
 $value = $obj2['dataset']['data'];
 foreach ($value as $key){
-    $fitopendates[] = $key[0];
-    $fitopenprices[] = $key[1];
+    $uaopendates[] = $key[0];
+    $uaopenprices[] = $key[1];
 }
 //Calculate change over day & % change
-$fitchangeprice = $fitcloseprices[0] - $fitcloseprices[1];
-$fitpercchange = round(($fitchangeprice / $fitopenprices[0]) * 100.0,2);
+$uachangeprice = $uacloseprices[0] - $uacloseprices[1];
+$uapercchange = round(($uachangeprice / $uaopenprices[0]) * 100.0,2);
 
 // GE
 //closing price
@@ -488,12 +488,12 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $fpercchange ?></td>
                             </tr>
                             <tr>
-                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=FIT"> FIT </a></td>
-                                <td> Fitbit </td>
-                                <td> <? echo $fitopenprices[0] ?> </td>
-                                <td> <? echo $fitcloseprices[0] ?></td>
-                                <td> <? echo $fitchangeprice ?></td>
-                                <td> <? echo $fitpercchange ?></td>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=FIT"> UA </a></td>
+                                <td> Under Armour </td>
+                                <td> <? echo $uaopenprices[0] ?> </td>
+                                <td> <? echo $uacloseprices[0] ?></td>
+                                <td> <? echo $uachangeprice ?></td>
+                                <td> <? echo $uapercchange ?></td>
                             </tr>
                             <tr>
                                 <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=GE"> GE </a></td>
