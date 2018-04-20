@@ -25,7 +25,7 @@ foreach ($value as $key){
     <th>Dates</th>
     <th><? echo $company; ?> </th>
   </tr><?php
-for($x = 9; $x >= 0; $x--){
+for($x = 365; $x >= 0; $x--){
           ?><tr> 
           <th><?=$dates[$x];?></th>   
           <th><?=trim($prices[$x]);?></th>  
