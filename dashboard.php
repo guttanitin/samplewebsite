@@ -214,8 +214,8 @@ $data2 = $quandl->getSymbol("WIKI/SPY", [
 	"column_index"    => 1 
 ]);
 //SPY closing prices
-$nvdclosedates = array();
-$nvdcloseprices = array();
+$spyclosedates = array();
+$spycloseprices = array();
 $obj = json_decode( $data, true );
 //file_put_contents('test.json', json_encode($obj2));
 $value = $obj['dataset']['data'];
@@ -498,10 +498,10 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=GE"> GE </a></td>
                                 <td> General Electric </td>
-                                <td> <? echo $gebopenprices[0] ?> </td>
-                                <td> <? echo $gebcloseprices[0] ?></td>
-                                <td> <? echo $gebchangeprice ?></td>
-                                <td> <? echo $gebpercchange ?></td>
+                                <td> <? echo $geopenprices[0] ?> </td>
+                                <td> <? echo $gecloseprices[0] ?></td>
+                                <td> <? echo $gechangeprice ?></td>
+                                <td> <? echo $gepercchange ?></td>
                             </tr>
                             <tr>
                                 <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=BAC"> BAC </a></td>
@@ -585,7 +585,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             </tr>
                             <tr>
                                 <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=SPY"> SPY </a></td>
-                                <td> S'&amp;'P 500 ETF </td>
+                                <td> S&amp;P 500 ETF </td>
                                 <td> <? echo $spyopenprices[0] ?> </td>
                                 <td> <? echo $spycloseprices[0] ?></td>
                                 <td> <? echo $spychangeprice ?></td>
