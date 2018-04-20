@@ -6,7 +6,7 @@ $quandl = new Quandl($api_key, 'json');
 $data = $quandl->getSymbol("WIKI/AAPL", [
 	"sort_order"      => "desc",
 	"rows"            => 10,
-	"column_index"    => 1-4, 
+	"column_index"    => 5, 
 ]);
 
 $dates = array();
