@@ -482,7 +482,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=F"> F </a></td>
                                 <td> Ford </td>
-                                <td> <? echo $fopenprices[0] ?> </td>
+                                <td> <? echo $fcloseprices[1] ?> </td>
                                 <td> <? echo $fcloseprices[0] ?></td>
                                 <td> <? echo $fchangeprice ?></td>
                                 <td> <? echo $fpercchange ?></td>
@@ -490,7 +490,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=FIT"> UA </a></td>
                                 <td> Under Armour </td>
-                                <td> <? echo $uaopenprices[0] ?> </td>
+                                <td> <? echo $uacloseprices[1] ?> </td>
                                 <td> <? echo $uacloseprices[0] ?></td>
                                 <td> <? echo $uachangeprice ?></td>
                                 <td> <? echo $uapercchange ?></td>
@@ -498,7 +498,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=GE"> GE </a></td>
                                 <td> General Electric </td>
-                                <td> <? echo $geopenprices[0] ?> </td>
+                                <td> <? echo $gecloseprices[1] ?> </td>
                                 <td> <? echo $gecloseprices[0] ?></td>
                                 <td> <? echo $gechangeprice ?></td>
                                 <td> <? echo $gepercchange ?></td>
@@ -506,7 +506,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=BAC"> BAC </a></td>
                                 <td> Bank of America </td>
-                                <td> <? echo $bacopenprices[0] ?> </td>
+                                <td> <? echo $baccloseprices[1] ?> </td>
                                 <td> <? echo $baccloseprices[0] ?></td>
                                 <td> <? echo $bacchangeprice ?></td>
                                 <td> <? echo $bacpercchange ?></td>
@@ -514,7 +514,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AMD"> AMD </a></td>
                                 <td> Advanced Micro Devices </td>
-                                <td> <? echo $amdopenprices[0] ?> </td>
+                                <td> <? echo $amdcloseprices[1] ?> </td>
                                 <td> <? echo $amdcloseprices[0] ?></td>
                                 <td> <? echo $amdchangeprice ?></td>
                                 <td> <? echo $amdpercchange ?></td>
@@ -546,7 +546,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AAPL"> AAPL </a></td>
                                 <td> Apple </td>
-                                <td> <? echo $openprices[0] ?> </td>
+                                <td> <? echo $closeprices[1] ?> </td>
                                 <td> <? echo $closeprices[0] ?></td>
                                 <td> <? echo $changeprice ?></td>
                                 <td> <? echo $percchange ?></td>
@@ -554,7 +554,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=TSLA"> TSLA </a></td>
                                 <td> TESLA </td>
-                                <td> <? echo $tslopenprices[0] ?> </td>
+                                <td> <? echo $tslcloseprices[1] ?> </td>
                                 <td> <? echo $tslcloseprices[0] ?></td>
                                 <td> <? echo $tslchangeprice ?></td>
                                 <td> <? echo $tslpercchange ?></td>
@@ -562,7 +562,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=FB"> FB </a></td>
                                 <td> Facebook </td>
-                                <td> <? echo $fbopenprices[0] ?> </td>
+                                <td> <? echo $fbcloseprices[1] ?> </td>
                                 <td> <? echo $fbcloseprices[0] ?></td>
                                 <td> <? echo $fbchangeprice ?></td>
                                 <td> <? echo $fbpercchange ?></td>
@@ -570,7 +570,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=NFLX"> NFLX </a></td>
                                 <td> Netflix </td>
-                                <td> <? echo $nflxopenprices[0] ?> </td>
+                                <td> <? echo $nflxcloseprices[1] ?> </td>
                                 <td> <? echo $nflxcloseprices[0] ?></td>
                                 <td> <? echo $nflxchangeprice ?></td>
                                 <td> <? echo $nflxpercchange ?></td>
@@ -578,7 +578,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=NVDA"> NVDA </a></td>
                                 <td> Nvidia </td>
-                                <td> <? echo $nvdopenprices[0] ?> </td>
+                                <td> <? echo $nvdcloseprices[1] ?> </td>
                                 <td> <? echo $nvdcloseprices[0] ?></td>
                                 <td> <? echo $nvdchangeprice ?></td>
                                 <td> <? echo $nvdpercchange ?></td>
@@ -586,7 +586,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                             <tr>
                                 <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=COST"> COST </a></td>
                                 <td> Costco </td>
-                                <td> <? echo $costopenprices[0] ?> </td>
+                                <td> <? echo $costcloseprices[1] ?> </td>
                                 <td> <? echo $costcloseprices[0] ?></td>
                                 <td> <? echo $costchangeprice ?></td>
                                 <td> <? echo $costpercchange ?></td>
