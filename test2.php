@@ -87,6 +87,7 @@ $quandl->timeout = 60;
 */
 ?>
 <div id="container" style="height: 100%; width: 95%; margin: 0 auto"></div>
+<br>
 <div id="container2" style = "min-width:400px; height: 400px">
 <table id='datatable'>
   <tr>
