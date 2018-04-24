@@ -86,6 +86,7 @@ $quandl->no_ssl_verify = true;
 $quandl->timeout = 60;
 */
 ?>
+<div id="container" style="height: 100%; width: 95%; margin: 0 auto"></div>
 <div id="container2" style = "min-width:400px; height: 400px">
 <table id='datatable'>
   <tr>
@@ -115,7 +116,6 @@ for($x = 9; $x >= 0; $x--){
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
-<div id="container" style="height: 100%; width: 95%; margin: 0 auto"></div>
 <script>
 $(function () {
 
