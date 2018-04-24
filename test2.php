@@ -86,7 +86,7 @@ $quandl->no_ssl_verify = true;
 $quandl->timeout = 60;
 */
 ?>
-<div id="container" style = "min-width:400px; height: 400px"></div>
+<div id="container2" style = "min-width:400px; height: 400px">
 <table id='datatable'>
   <tr>
     <th>Dates</th>
@@ -109,6 +109,7 @@ for($x = 9; $x >= 0; $x--){
   };
 ?>
 </table>
+</div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
