@@ -480,7 +480,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=F"> F </a></td>
+                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=F"> F </a></td>
                                 <td> Ford </td>
                                 <td> <? echo $fcloseprices[1] ?> </td>
                                 <td> <? echo $fcloseprices[0] ?></td>
@@ -488,7 +488,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $fpercchange ?></td>
                             </tr>
                             <tr>
-                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=FIT"> UA </a></td>
+                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=FIT"> UA </a></td>
                                 <td> Under Armour </td>
                                 <td> <? echo $uacloseprices[1] ?> </td>
                                 <td> <? echo $uacloseprices[0] ?></td>
@@ -496,7 +496,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $uapercchange ?></td>
                             </tr>
                             <tr>
-                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=GE"> GE </a></td>
+                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=GE"> GE </a></td>
                                 <td> General Electric </td>
                                 <td> <? echo $gecloseprices[1] ?> </td>
                                 <td> <? echo $gecloseprices[0] ?></td>
@@ -512,7 +512,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $bacpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AMD"> AMD </a></td>
+                                <td> <a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=AMD"> AMD </a></td>
                                 <td> Advanced Micro Devices </td>
                                 <td> <? echo $amdcloseprices[1] ?> </td>
                                 <td> <? echo $amdcloseprices[0] ?></td>
@@ -523,7 +523,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                     </table>
                 </div>
                 <div class = "col-sm-7">
-                    <iframe src="https://nitintest.azurewebsites.net/portfoliograph.php" width="100%" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
+                    <iframe src="https://hhroboapp.azurewebsites.net/portfoliograph.php" width="100%" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
                 </div>
             
             </div>
@@ -544,7 +544,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AAPL"> AAPL </a></td>
+                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=AAPL"> AAPL </a></td>
                                 <td> Apple </td>
                                 <td> <? echo $closeprices[1] ?> </td>
                                 <td> <? echo $closeprices[0] ?></td>
@@ -552,7 +552,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $percchange ?></td>
                             </tr>
                             <tr>
-                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=TSLA"> TSLA </a></td>
+                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=TSLA"> TSLA </a></td>
                                 <td> TESLA </td>
                                 <td> <? echo $tslcloseprices[1] ?> </td>
                                 <td> <? echo $tslcloseprices[0] ?></td>
@@ -560,7 +560,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $tslpercchange ?></td>
                             </tr>
                             <tr>
-                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=FB"> FB </a></td>
+                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=FB"> FB </a></td>
                                 <td> Facebook </td>
                                 <td> <? echo $fbcloseprices[1] ?> </td>
                                 <td> <? echo $fbcloseprices[0] ?></td>
@@ -568,7 +568,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $fbpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=NFLX"> NFLX </a></td>
+                                <td> <a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=NFLX"> NFLX </a></td>
                                 <td> Netflix </td>
                                 <td> <? echo $nflxcloseprices[1] ?> </td>
                                 <td> <? echo $nflxcloseprices[0] ?></td>
@@ -576,7 +576,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $nflxpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=NVDA"> NVDA </a></td>
+                                <td> <a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=NVDA"> NVDA </a></td>
                                 <td> Nvidia </td>
                                 <td> <? echo $nvdcloseprices[1] ?> </td>
                                 <td> <? echo $nvdcloseprices[0] ?></td>
@@ -595,7 +595,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                     </table>
                 </div>
                 <div class ="col-sm-7">
-                    <iframe src="https://nitintest.azurewebsites.net/tendaygraph.php" width="100%" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
+                    <iframe src="https://hhroboapp.azurewebsites.net/tendaygraph.php" width="100%" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
                 </div>
             
             </div>
