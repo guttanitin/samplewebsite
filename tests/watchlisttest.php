@@ -12,32 +12,13 @@ $sql = "
             SELECT * FROM Watchlist
              ";
 $stmt = sqlsrv_query($connections, $sql);
-echo 'New User Registered Successfully';
-$data = $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
-$output = "<table>";
-foreach($data as $key => $var) {
-    //$output .= '<tr>';
-    if($key===0) {
-        $output .= '<tr>';
-        foreach($var as $col => $val) {
-            $output .= "<td>" . $col . '</td>';
-        }
-        $output .= '</tr>';
-        foreach($var as $col => $val) {
-            $output .= '<td>' . $val . '</td>';
-        }
-        $output .= '</tr>';
-    }
-    else {
-        $output .= '<tr>';
-        foreach($var as $col => $val) {
-            $output .= '<td>' . $val . '</td>';
-        }
-        $output .= '</tr>';
-    }
-}
-$output .= '</table>';
-echo $output;
+
+$insertSQL = "INSERT INTO Watchlist (email, stock, watchlist)
+                      VALUES (?,?,?,?)";
+$params = array('nitintest@gmail.com', 'FB', 'testWatchlist');
+$stmt = sqlsrv_query($connections, $insertSQL, $params);
+echo 'New Watchlist Registered Successfully';
+echo "<br>";
 
 ?>
 <html>
@@ -45,10 +26,9 @@ echo $output;
     <?php
     while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)){ ?>
     <tr>
-        <td><? echo $row['username']; ?> </td>
-        <td><? echo $row['watchlist']; ?> </td>
         <td><? echo $row['email']; ?> </td>
-        <td><? echo $row['pass']; ?> </td>
+        <td><? echo $row['stock']; ?> </td>
+        <td><? echo $row['watchlist']; ?> </td>
     </tr>   <?    }
         ?>
 </table>
