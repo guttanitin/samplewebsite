@@ -13,9 +13,9 @@ $sql = "
              ";
 $stmt = sqlsrv_query($connections, $sql);
 echo 'New User Registered Successfully';
-
+$data = $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
 $output = "<table>";
-foreach($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC) as $key => $var) {
+foreach($data as $key => $var) {
     //$output .= '<tr>';
     if($key===0) {
         $output .= '<tr>';
