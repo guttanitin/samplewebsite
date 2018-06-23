@@ -1,0 +1,136 @@
+html,
+body {
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    background: #fafafa;
+}
+
+/* add style to side navbar */
+a, a:hover, a:focus{
+    color:inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar{
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header{
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+#sidebar ul.components{
+    padding: 20px 0;
+    /* border-bottom: 1px solid #47748b; */
+}
+
+/* #sidebar ul p{
+    color: #fff;
+    padding: 10px;
+} */
+
+#sidebar ul li a{
+    padding: 15px;
+    font-size: 1.3em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+ul ul a{
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+/* shrinking sidebar from 250px to 80px and center aligning its contents  */
+#sidebar.active{
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+
+/* toggling the sidebar header content, hide the brand heading, and show small brand heading and vice versa */
+#sidebar .sidebar-header strong{
+    display: none;
+}
+
+#sidebar.active .sidebar-header h3{
+    display: none;
+}
+
+#sidebar.active .sidebar-header strong{
+    display: block;
+}
+
+#sidebar ul li a{
+    text-align: left;
+}
+
+#sidebar.active ul li a{
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+#sidebar.active ul li a i{
+    margin-right: 0;
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+/*  same dropdown links padding */
+#sidebar.active ul ul a{
+    padding: 10px !important;
+}
+
+/* change arrow position to bottom center psoition
+   translateX(50%) works with right: 50%
+   to accurately center the arrow 
+*/
+#sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before{
+    top: auto;
+    bottom: 5px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.wrapper{
+    display: flex;
+    align-items: stretch;
+}
+
+/* add style to header navbar */
+#content{
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+.navbar{
+    width: 77vw;
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn{
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}

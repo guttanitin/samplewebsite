@@ -2,7 +2,7 @@
 /*
 Dashboard Page for User
 */
-
+//include("userHome.php");
 include("testQuand/php-quandl-master/Quandl.php");
 //$api_key = $_SERVER['QUANDL_KEY'] ?: "bcw-wtRJ3ucCAZJQu4i8";
 $api_key = "bcw-wtRJ3ucCAZJQu4i8";
@@ -430,6 +430,25 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  
+	  
+    <!-- font awesome icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" 
+            integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" 
+            crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
+          crossorigin="anonymous">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+
       <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
       <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
     <style type = "text/css">
@@ -455,6 +474,135 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
     </script>
     </head>
     <body>
+	
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+
+            <!-- navbar brand -->
+            <a class="navbar-brand" href="#">Hedge Hog</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- sidebar links -->
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Home">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-link-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="News">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-newspaper"></i>
+                            <span class="nav-link-text">News</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Screener">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-window-restore"></i>
+                            <span class="nav-link-text">Screener</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Recommender">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-male"></i>
+                            <span class="nav-link-text">Recommender</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Portfolio">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-fw fa-link"></i>
+                            <span class="nav-link-text">Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Education">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-fw fa-book"></i>
+                            <span class="nav-link-text">Education</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Community">
+                        <a class="nav-link" href="#">
+                            <i class="far fa-comments"></i>                            
+                            <span class="nav-link-text">Community</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="App Store">
+                        <a class="nav-link" href="#">
+                            <i class="fab fa-app-store"></i>
+                            <span class="nav-link-text">App Store</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Support">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-question-circle"></i>
+                            <span class="nav-link-text">Support</span>
+                        </a>
+                    </li>
+                </ul><!-- end of sideBar links-->
+                <ul class="navbar-nav sidenav-toggler">
+                    <li class="nav-item">
+                        <a class="nav-link text-center" id="sidenavToggler">
+                            <i class="fa fa-fw fa-angle-left"></i>
+                        </a>
+                    </li>
+                </ul><!-- end of nav toggler-->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-envelope"></i>
+                            <!-- <span class="d-lg-none">Messages
+                                <span class="badge badge-pill badge-primary">12 New</span>
+                            </span> -->
+                            <span class="indicator text-primary d-none d-lg-block">
+                                <i class="fa fa-fw fa-circle"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle mr-lg-2" id="notificationDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bell"></i>
+                            <!-- <span class="d-lg-none">Alerts
+                                <span class="badge badge-pill badge-warning">6 New</span>
+                            </span> -->
+                            <span class="indicator text-warning d-none d-lg-block">
+                                <i class="fa fa-fw fa-circle"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <!-- <span class="d-lg-none">Alerts
+                                <span class="badge badge-pill badge-warning">6 New</span>
+                            </span> -->
+                            <span class="indicator text-danger d-none d-lg-block">
+                                <i class="fa fa-fw fa-circle"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                            <i class="fas fa-sign-out-alt"></i>Logout
+                            <!-- <i class="fa fa-fw fa-sign-out"></i>Logout -->
+                        </a>
+                    </li>
+                </ul><!-- end of header nav links -->
+            </div><!-- end of navbar responsive -->
+        </nav><!-- end of navbar -->
+        
+
+
+
+
+
+
+        <!-- custom js -->
+        <script src="assets/js/script.min.js"></script>
+  <div class="content-wrapper">
         <div class ="container-fluid">
             <div class = "row">
             <div class = "col col-sm-5"></div>
@@ -480,7 +628,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=F"> F </a></td>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=F"> F </a></td>
                                 <td> Ford </td>
                                 <td> <? echo $fcloseprices[1] ?> </td>
                                 <td> <? echo $fcloseprices[0] ?></td>
@@ -488,7 +636,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $fpercchange ?></td>
                             </tr>
                             <tr>
-                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=FIT"> UA </a></td>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=FIT"> UA </a></td>
                                 <td> Under Armour </td>
                                 <td> <? echo $uacloseprices[1] ?> </td>
                                 <td> <? echo $uacloseprices[0] ?></td>
@@ -496,7 +644,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $uapercchange ?></td>
                             </tr>
                             <tr>
-                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=GE"> GE </a></td>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=GE"> GE </a></td>
                                 <td> General Electric </td>
                                 <td> <? echo $gecloseprices[1] ?> </td>
                                 <td> <? echo $gecloseprices[0] ?></td>
@@ -512,7 +660,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $bacpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> <a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=AMD"> AMD </a></td>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AMD"> AMD </a></td>
                                 <td> Advanced Micro Devices </td>
                                 <td> <? echo $amdcloseprices[1] ?> </td>
                                 <td> <? echo $amdcloseprices[0] ?></td>
@@ -523,7 +671,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                     </table>
                 </div>
                 <div class = "col-sm-7">
-                    <iframe src="https://hhroboapp.azurewebsites.net/portfoliograph.php" width="100%" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
+                    <iframe src="https://nitintest.azurewebsites.net/portfoliograph.php" width="100%" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
                 </div>
             
             </div>
@@ -544,7 +692,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=AAPL"> AAPL </a></td>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=AAPL"> AAPL </a></td>
                                 <td> Apple </td>
                                 <td> <? echo $closeprices[1] ?> </td>
                                 <td> <? echo $closeprices[0] ?></td>
@@ -552,7 +700,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $percchange ?></td>
                             </tr>
                             <tr>
-                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=TSLA"> TSLA </a></td>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=TSLA"> TSLA </a></td>
                                 <td> TESLA </td>
                                 <td> <? echo $tslcloseprices[1] ?> </td>
                                 <td> <? echo $tslcloseprices[0] ?></td>
@@ -560,7 +708,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $tslpercchange ?></td>
                             </tr>
                             <tr>
-                                <td><a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=FB"> FB </a></td>
+                                <td><a href="https://nitintest.azurewebsites.net/area.php?COMPANY=FB"> FB </a></td>
                                 <td> Facebook </td>
                                 <td> <? echo $fbcloseprices[1] ?> </td>
                                 <td> <? echo $fbcloseprices[0] ?></td>
@@ -568,7 +716,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $fbpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> <a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=NFLX"> NFLX </a></td>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=NFLX"> NFLX </a></td>
                                 <td> Netflix </td>
                                 <td> <? echo $nflxcloseprices[1] ?> </td>
                                 <td> <? echo $nflxcloseprices[0] ?></td>
@@ -576,7 +724,7 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                                 <td> <? echo $nflxpercchange ?></td>
                             </tr>
                             <tr>
-                                <td> <a href="https://hhroboapp.azurewebsites.net/area.php?COMPANY=NVDA"> NVDA </a></td>
+                                <td> <a href="https://nitintest.azurewebsites.net/area.php?COMPANY=NVDA"> NVDA </a></td>
                                 <td> Nvidia </td>
                                 <td> <? echo $nvdcloseprices[1] ?> </td>
                                 <td> <? echo $nvdcloseprices[0] ?></td>
@@ -595,11 +743,12 @@ $amdpercchange = round(($amdchangeprice / $amdopenprices[0]) * 100.0,2);
                     </table>
                 </div>
                 <div class ="col-sm-7">
-                    <iframe src="https://hhroboapp.azurewebsites.net/tendaygraph.php" width="100%" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
+                    <iframe src="https://nitintest.azurewebsites.net/tendaygraph.php" width="100%" height="400" scrolling="no" style="padding-left: 25px; overflow:hidden; margin-top:0px; margin-left:0px; border:none;" frameBorder="0"></iframe>
                 </div>
             
             </div>
             
         </div>
+	  </div>
     </body>
 </html>

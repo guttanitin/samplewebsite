@@ -1,1 +1,0 @@
-// fix closing and opening prices
