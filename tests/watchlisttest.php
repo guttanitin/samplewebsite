@@ -10,7 +10,7 @@ include '../azure_connection.php';
 $connections = OpenCon();
 
 $insertSQL = "INSERT INTO Watchlist (email, stock, watchlist)
-                      VALUES (?,?,?,?)";
+                      VALUES (?,?,?)";
 $params = array('nitintest@gmail.com', 'FB', 'testWatchlist');
 $stmt = sqlsrv_query($connections, $insertSQL, $params);
 echo 'New Watchlist Registered Successfully';
